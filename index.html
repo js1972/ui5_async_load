@@ -20,6 +20,7 @@
 		<!--src="mobile_optimised/resources/sap-ui-core.js"-->
 		<!--src="resources/sap-ui-core-lean.js"-->
 		<!--src="resources/sap-ui-core-all.js"-->
+		<!--src="resources/sap-ui-core.js"-->
 
 		<script id="sap-ui-bootstrap"
 				src="resources/sap-ui-core.js"
@@ -46,12 +47,15 @@
 			var target = document.getElementById("center");
 			var spinner = new Spinner(opts).spin(target);
 
+			// execute our component once UI5 has loaded
 			sap.ui.getCore().attachInit(function() {
+
 				new sap.ui.core.ComponentContainer({
 					name: "sap.ui.demo"
 				}).placeAt("content");
 
 				spinner.stop();
+
 			});
 		</script>
 	</body>
